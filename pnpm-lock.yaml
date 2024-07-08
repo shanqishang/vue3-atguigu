@@ -82,7 +82,7 @@ devDependencies:
     specifier: ^9.10.0
     version: 9.27.0(eslint@8.38.0)
   husky:
-    specifier: ^8.0.0
+    specifier: ^8.0.3
     version: 8.0.3
   mockjs:
     specifier: ^1.1.0
