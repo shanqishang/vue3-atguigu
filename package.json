@@ -11,7 +11,7 @@
     "format": "prettier --write \"./**/*.{html,vue,ts,js,json,md,scss,css}\"",
     "lint:eslint": "eslint src/**/*.{ts,vue} --cache --fix",
     "lint:style": "stylelint src/**/*.{css,scss,vue} --cache --fix",
-    "prepare": "husky install"
+    "commitlint": "commitlint --config commitlint.config.cjs -e -V"
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.1.0",
@@ -31,8 +31,8 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.21.3",
-    "@commitlint/cli": "^17.5.1",
-    "@commitlint/config-conventional": "^17.4.4",
+    "@commitlint/cli": "^17.8.1",
+    "@commitlint/config-conventional": "^17.8.1",
     "@typescript-eslint/eslint-plugin": "^5.57.1",
     "@typescript-eslint/parser": "^5.57.1",
     "@vitejs/plugin-vue": "^4.1.0",

@@ -49,10 +49,10 @@ devDependencies:
     specifier: ^7.21.3
     version: 7.24.7(@babel/core@7.24.7)(eslint@8.38.0)
   '@commitlint/cli':
-    specifier: ^17.5.1
+    specifier: ^17.8.1
     version: 17.8.1
   '@commitlint/config-conventional':
-    specifier: ^17.4.4
+    specifier: ^17.8.1
     version: 17.8.1
   '@typescript-eslint/eslint-plugin':
     specifier: ^5.57.1
@@ -82,7 +82,7 @@ devDependencies:
     specifier: ^9.10.0
     version: 9.27.0(eslint@8.38.0)
   husky:
-    specifier: ^8.0.3
+    specifier: ^8.0.0
     version: 8.0.3
   mockjs:
     specifier: ^1.1.0
