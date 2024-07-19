@@ -6,9 +6,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <style lang="scss" scoped>
 .attr {
@@ -17,7 +15,7 @@
   padding: 20px;
   .three-category {
     width: 100%;
-    :deep(.el-card__body){
+    :deep(.el-card__body) {
       display: flex;
       .category {
         margin-right: 20px;

@@ -7,8 +7,8 @@ export const constantRoute = [
     meta: {
       title: '登录',
       hidden: true,
-      icon: 'Promotion'
-    }
+      icon: 'Promotion',
+    },
   },
   {
     path: '/',
@@ -17,7 +17,7 @@ export const constantRoute = [
     meta: {
       // title: 'layout',
       hidden: true,
-      icon: 'Avatar'
+      icon: 'Avatar',
     },
     redirect: '/home',
     children: [
@@ -28,10 +28,10 @@ export const constantRoute = [
         meta: {
           title: '首页',
           hidden: false,
-          icon: 'HomeFilled'
-        }
-      }
-    ]
+          icon: 'HomeFilled',
+        },
+      },
+    ],
   },
   {
     path: '/screen',
@@ -40,7 +40,7 @@ export const constantRoute = [
     meta: {
       title: '数据大屏',
       hidden: false,
-      icon: 'Platform'
+      icon: 'Platform',
     },
   },
   {
@@ -51,7 +51,7 @@ export const constantRoute = [
     meta: {
       title: '权限管理',
       hidden: false,
-      icon: 'Lock'
+      icon: 'Lock',
     },
     children: [
       {
@@ -61,8 +61,8 @@ export const constantRoute = [
         meta: {
           title: '用户管理',
           hidden: false,
-          icon: 'User'
-        }
+          icon: 'User',
+        },
       },
       {
         path: '/acl/role',
@@ -71,8 +71,8 @@ export const constantRoute = [
         meta: {
           title: '角色管理',
           hidden: false,
-          icon: 'UserFilled'
-        }
+          icon: 'UserFilled',
+        },
       },
       {
         path: '/acl/permission',
@@ -81,10 +81,10 @@ export const constantRoute = [
         meta: {
           title: '菜单管理',
           hidden: false,
-          icon: 'Monitor'
-        }
+          icon: 'Monitor',
+        },
       },
-    ]
+    ],
   },
   {
     path: '/product',
@@ -94,7 +94,7 @@ export const constantRoute = [
     meta: {
       title: '商品管理',
       hidden: false,
-      icon: 'Goods'
+      icon: 'Goods',
     },
     children: [
       {
@@ -104,8 +104,8 @@ export const constantRoute = [
         meta: {
           title: '品牌管理',
           hidden: false,
-          icon: 'ShoppingCartFull'
-        }
+          icon: 'ShoppingCartFull',
+        },
       },
       {
         path: '/product/attr',
@@ -114,8 +114,8 @@ export const constantRoute = [
         meta: {
           title: '属性管理',
           hidden: false,
-          icon: 'ChromeFilled'
-        }
+          icon: 'ChromeFilled',
+        },
       },
       {
         path: '/product/spu',
@@ -124,8 +124,8 @@ export const constantRoute = [
         meta: {
           title: 'SPU管理',
           hidden: false,
-          icon: 'Calendar'
-        }
+          icon: 'Calendar',
+        },
       },
       {
         path: '/product/sku',
@@ -134,10 +134,10 @@ export const constantRoute = [
         meta: {
           title: 'SKU管理',
           hidden: false,
-          icon: 'Orange'
-        }
+          icon: 'Orange',
+        },
       },
-    ]
+    ],
   },
   {
     path: '/404',
@@ -146,8 +146,8 @@ export const constantRoute = [
     meta: {
       title: '404',
       hidden: true,
-      icon: 'BrushFilled'
-    }
+      icon: 'BrushFilled',
+    },
   },
   {
     // 任意路由
@@ -158,6 +158,6 @@ export const constantRoute = [
       title: '任意路由',
       hidden: true,
       icon: 'Wallet',
-    } 
-  }
+    },
+  },
 ]

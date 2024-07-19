@@ -1,6 +1,6 @@
 <template>
-  <div class="layout" :class="{ 'fold':settingStore.fold ? true : false}">
-    <div class="right-menu" :class="{ 'fold':settingStore.fold ? true : false}" >
+  <div class="layout" :class="{ fold: settingStore.fold ? true : false }">
+    <div class="right-menu" :class="{ fold: settingStore.fold ? true : false }">
       <div class="logo">
         <Logo></Logo>
       </div>
@@ -8,13 +8,22 @@
         <!-- 路由菜单 -->
         <el-scrollbar class="scrollbar">
           <!-- 递归路由 单节点就是el- -->
-          <el-menu :default-active="$route.path" background-color="#001529" text-color="white" active-text-color="yellowgreen" :collapse="settingStore.fold ? true : false">
+          <el-menu
+            :default-active="$route.path"
+            background-color="#001529"
+            text-color="white"
+            active-text-color="yellowgreen"
+            :collapse="settingStore.fold ? true : false"
+          >
             <Menu :menuList="userStore.menuRoutes"></Menu>
           </el-menu>
         </el-scrollbar>
       </div>
     </div>
-    <div class="left-content" :class="{ 'fold':settingStore.fold ? true : false}">
+    <div
+      class="left-content"
+      :class="{ fold: settingStore.fold ? true : false }"
+    >
       <div class="top-tabbar">
         <Tabbar></Tabbar>
       </div>
@@ -41,10 +50,9 @@ let settingStore = useSettingStore()
 let $route = useRoute()
 
 //挂载数据
-onMounted(() => { 
+onMounted(() => {
   userStore.userInfo()
 })
-
 </script>
 
 <style lang="scss" scoped>
@@ -57,7 +65,7 @@ onMounted(() => {
     height: 100%;
     background-color: $menu-background-color;
     &.fold {
-      width:$menu-min-width !important;
+      width: $menu-min-width !important;
     }
     .logo {
       height: 50px;
@@ -85,6 +93,5 @@ onMounted(() => {
   }
 }
 .fold {
-  
 }
 </style>

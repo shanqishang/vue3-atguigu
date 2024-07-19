@@ -1,12 +1,8 @@
 <template>
-  <div class="spu">
-    spu
-  </div>
+  <div class="spu">spu</div>
 </template>
 
-<script setup>
-
-</script>
+<script setup></script>
 
 <style lang="scss" scoped>
 .spu {

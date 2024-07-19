@@ -4,9 +4,14 @@
       <h4>分配角色（职位）</h4>
     </template>
     <template #default>
-      <el-form :model="userRoleForm" label-width="100" label-position="left" ref="userFormRef">
+      <el-form
+        :model="userRoleForm"
+        label-width="100"
+        label-position="left"
+        ref="userFormRef"
+      >
         <el-form-item label="用户姓名" prop="username">
-          <el-input v-model="userRoleForm.username" disabled/>
+          <el-input v-model="userRoleForm.username" disabled />
         </el-form-item>
         <el-form-item label="职位列表">
           <el-checkbox
@@ -20,7 +25,12 @@
             v-model="checkedRoles"
             @change="handleCheckedRolesChange"
           >
-            <el-checkbox v-for="role in roles" :key="role.id" :label="role.roleName" :value="role">
+            <el-checkbox
+              v-for="role in roles"
+              :key="role.id"
+              :label="role.roleName"
+              :value="role"
+            >
               {{ role.roleName }}
             </el-checkbox>
           </el-checkbox-group>
@@ -38,11 +48,11 @@
 
 <script setup lang="ts">
 import { ref, defineExpose } from 'vue'
-import { reqUserGetRole,reqUserAssignRole} from '@/api/acl/user/index'
-import { ElMessage } from 'element-plus';
+import { reqUserGetRole, reqUserAssignRole } from '@/api/acl/user/index'
+import { ElMessage } from 'element-plus'
 
 let isOpen = ref(false)
-let userRoleForm:any = ref({})
+let userRoleForm: any = ref({})
 let username = ref('')
 let userId = ref(0)
 let allRolesList: any = ref()
@@ -50,25 +60,25 @@ let assignRoles: any = ref()
 
 let checkAll = ref(false)
 let isIndeterminate = ref(true)
-let checkedRoles:any = ref([])
+let checkedRoles: any = ref([])
 let roles: any = ref([])
 
 //父组件通信
 let $emit = defineEmits(['selectUser'])
 
-const handleCheckAllChange = (val: any) => { 
+const handleCheckAllChange = (val: any) => {
   //全部的角色
   checkedRoles.value = val ? roles.value : []
   isIndeterminate.value = false
 }
 
-const handleCheckedRolesChange = (val:any) => {
+const handleCheckedRolesChange = (val: any) => {
   const checkedCount = val.length
   checkAll.value = checkedCount === roles.value.length
   isIndeterminate.value = checkedCount > 0 && checkedCount < roles.value.length
 }
 
-const closeDrawer = () => { 
+const closeDrawer = () => {
   isOpen.value = false
 }
 
@@ -83,7 +93,7 @@ const openDrawer = async (data: any) => {
   userId.value = data.id
   username.value = data.username
   let res: any = await reqUserGetRole(data.id)
-  if (res.code === 200) { 
+  if (res.code === 200) {
     allRolesList.value = res.data.allRolesList
     assignRoles.value = res.data.assignRoles
 
@@ -95,7 +105,7 @@ const openDrawer = async (data: any) => {
   }
 }
 
-const confirmClick = async () => { 
+const confirmClick = async () => {
   //保存
   let roleIdList = ref<number[]>([])
   checkedRoles.value.forEach((item: any) => roleIdList.value.push(item.id))
@@ -103,28 +113,21 @@ const confirmClick = async () => {
   if (res.code === 200) {
     ElMessage({
       type: 'success',
-      message: '更新用户角色成功'
+      message: '更新用户角色成功',
     })
     //触发父组件的查询
     $emit('selectUser')
     closeDrawer()
-  } else { 
+  } else {
     ElMessage({
       type: 'error',
-      message: '更新用户角色失败'
+      message: '更新用户角色失败',
     })
     closeDrawer()
   }
 }
 
-
-
 defineExpose({ closeDrawer, openDrawer })
-
-
-
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

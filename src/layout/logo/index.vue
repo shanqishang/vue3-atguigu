@@ -1,19 +1,19 @@
 <template>
   <div class="logo">
-    <img :src="getImageUrl(setting.logo)"/>
-    <span v-if="!settingStore.fold">{{setting.title}}</span>
+    <img :src="getImageUrl(setting.logo)" />
+    <span v-if="!settingStore.fold">{{ setting.title }}</span>
   </div>
 </template>
 
 <script setup lang="ts">
 import setting from '@/setting'
-import useSettingStore from '@/pinia/modules/setting';
+import useSettingStore from '@/pinia/modules/setting'
 
 let settingStore = useSettingStore()
 
 //根据图片构建url
-function getImageUrl(path:string) { 
-  return new URL(`../../assets/images/${path}`,import.meta.url).href
+function getImageUrl(path: string) {
+  return new URL(`../../assets/images/${path}`, import.meta.url).href
 }
 </script>
 

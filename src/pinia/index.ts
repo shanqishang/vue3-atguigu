@@ -1,5 +1,5 @@
 //创建大仓库
-import { createPinia } from "pinia";
+import { createPinia } from 'pinia'
 
 const pinia = createPinia()
 

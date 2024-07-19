@@ -4,35 +4,52 @@
       <span>查看商品的详情</span>
     </template>
     <template #default>
-      <el-form
-        label-position="left"
-        label-width="100"
-        :model="skuInfo"
-      >
+      <el-form label-position="left" label-width="100" :model="skuInfo">
         <el-form-item label="名称" label-position="left">
-          <span>{{skuInfo.skuName}}</span>
+          <span>{{ skuInfo.skuName }}</span>
         </el-form-item>
         <el-form-item label="描述" label-position="left">
-          <span>{{skuInfo.skuDesc}}</span>
+          <span>{{ skuInfo.skuDesc }}</span>
         </el-form-item>
         <el-form-item label="价格" label-position="left">
-          <span>{{skuInfo.price}}</span>
+          <span>{{ skuInfo.price }}</span>
         </el-form-item>
         <el-form-item label="平台属性" label-position="left">
           <template #default>
-            <el-tag style="margin-right:10px;" type="primary" v-for="(item,index) in skuInfo.skuAttrValueList" :key="index">{{item.valueName}}</el-tag>
+            <el-tag
+              style="margin-right: 10px"
+              type="primary"
+              v-for="(item, index) in skuInfo.skuAttrValueList"
+              :key="index"
+            >
+              {{ item.valueName }}
+            </el-tag>
           </template>
         </el-form-item>
         <el-form-item label="销售属性" label-position="left">
           <template #default>
-            <el-tag style="margin-right:10px;" type="primary" v-for="(item,index) in skuInfo.skuSaleAttrValueList" :key="index">{{item.saleAttrValueName}}</el-tag>
+            <el-tag
+              style="margin-right: 10px"
+              type="primary"
+              v-for="(item, index) in skuInfo.skuSaleAttrValueList"
+              :key="index"
+            >
+              {{ item.saleAttrValueName }}
+            </el-tag>
           </template>
         </el-form-item>
         <el-form-item label="商品图片" label-position="left">
           <template #default>
-            <el-carousel :interval="4000" type="card" style="height:150px;width:500px;">
-              <el-carousel-item v-for="(item,index) in skuInfo.skuImageList" :key="index">
-                <img :src="item.imgUrl" style="height:100%;width:100%;" />
+            <el-carousel
+              :interval="4000"
+              type="card"
+              style="height: 150px; width: 500px"
+            >
+              <el-carousel-item
+                v-for="(item, index) in skuInfo.skuImageList"
+                :key="index"
+              >
+                <img :src="item.imgUrl" style="height: 100%; width: 100%" />
               </el-carousel-item>
             </el-carousel>
           </template>
@@ -43,7 +60,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref,watch  } from 'vue'
+import { ref, watch } from 'vue'
 
 // "data": {
 //         "id": 13011,
@@ -151,26 +168,27 @@ let props: any = defineProps(['info', 'msg'])
 
 let skuInfo: any = ref()
 
-watch(() => props.info, (newValue) => { 
-  skuInfo.value = newValue
-  console.log("11111111",skuInfo.value);
-}, { immediate: true })
+watch(
+  () => props.info,
+  (newValue) => {
+    skuInfo.value = newValue
+    console.log('11111111', skuInfo.value)
+  },
+  { immediate: true },
+)
 
 let drawer = ref(false)
 
-const openDrawer = () => { 
+const openDrawer = () => {
   drawer.value = true
 }
 
-const closeDrawer = () => { 
+const closeDrawer = () => {
   drawer.value = false
 }
 
 //这里需要暴露出去不然父组件调用不到这个数据
-defineExpose({ openDrawer,closeDrawer })
-
+defineExpose({ openDrawer, closeDrawer })
 </script>
 
-<style scoped lang="scss">
-
-</style>
+<style scoped lang="scss"></style>
